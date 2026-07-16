@@ -1,7 +1,0 @@
-{
-  "version": 1,
-  "files": [
-    { "file": "test-music.mp3", "roles": ["default", "angle", "abx:base", "positioning", "positioning:benchmark", "positioning:test"] }
-  ],
-  "params": {}
-}
