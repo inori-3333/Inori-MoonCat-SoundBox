@@ -1,0 +1,22 @@
+{
+  "name": "hifi-box",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @hifi-box/desktop",
+    "tauri:dev": "npm run tauri:dev -w @hifi-box/desktop",
+    "typecheck": "npm run typecheck -w @hifi-box/core && npm run typecheck -w @hifi-box/content && npm run typecheck -w @hifi-box/desktop",
+    "test": "npm run test -w @hifi-box/core && npm run test -w @hifi-box/desktop && cargo test --manifest-path apps/desktop/src-tauri/Cargo.toml",
+    "build": "npm run typecheck && npm run build -w @hifi-box/desktop",
+    "build:installer": "npm run build && npm run tauri:build -w @hifi-box/desktop",
+    "check": "npm run typecheck && npm run test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
